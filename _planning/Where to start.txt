@@ -1,0 +1,63 @@
+Move to 'bedroom' - drop of charmed people.
+// Lol, actually a dance floor now!
+
+repel - repel charmed + angry people
+
+color symbolise state
+// Couples are now no longer pink!
+
+press button to charm
+
+steal one from couple, other gets angry (steal from group)
+drama + anything = angry drama
+
+
+=> = someone working on it
+// = done
+
+Done:
+
+// Move player with mouse
+// single
+// Colors for states
+// C = charm
+// R = repel
+// Behaviour for being charmed
+// Repelling behaviour
+// Clean out files
+// attracted but to far away = not attracted anymore
+// drama queens
+// Angry = bad (hurt + follows)
+// health systems
+// couples
+// black background (it's a nightclub, d'oh!)
+// Start & end
+// peacemaker behaviour
+// bring to area/corral
+// Peacemaker graphic (Joe?)
+// Disco ball
+// Sound
+// point system? => linked to corral 
+
+To do:
+
+Hook it up to the website
+~ Tweak variables
+Instructions (next to canvas?)
+Start alert?
+
+
+Long term to do:
+
+
+other behaviours
+Extra behaviour type?
+
+
+
+
+Joe Noted just now (2011-09-29 2:20 PM):
+
+- Should drama queens still hurt you if they're on the dance floor? (maybe that makes sense)
+- Duh, make sure non-attracted Boids stay off the dance floor.
+- After the game restarts, you seemingly cannot charm boids!

@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title> Disco Fever </title>
+    <link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8">
+    <script type = "text/javascript" src="_lib/modernizr.custom.30915.js"></script>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+<audio id="audioT" src="_audio/scratch.m4a"></audio>
+<audio id="audioAngry" src="_audio/CrowdShouting.m4a"></audio>
+
+<div id="gameWon" class="infoBox" style="display: none">
+	<h1><strong class="brightBlue">YOU WON! You got <em>everybody</em> on the dance floor!</strong><br>Your final score was:</h1>
+	<h2 class="finalScore">replaceMePlease</h2>
+	<img src="_img/BorisBoidArtCharm.png" alt="Boris Boid, smoldering with charm." title="Boris Boid, smoldering with charm." style="width: 50%; height: auto;">
+	<div class="links">
+		<a id="toInstructions" href="#">Instructions&hellip;</a>
+		<a class="start-game" href="#">Restart!</a>
+	</div>
+</div>
+
+<div id="gameOver" class="infoBox" style="display: none">
+	<h1><strong class="brightRed">YOU DIED! Game over!</strong><br>Your final score was:</h1>
+	<h2 class="finalScore">replaceMePlease</h2>
+	<img src="_img/BorisBoidArtCharm.png" alt="Boris Boid, smoldering with charm." title="Boris Boid, smoldering with charm." style="width: 50%; height: auto;">
+	<div class="links">
+		<a class="restart-game" href="#">Restart</a>
+	</div>
+</div>
+
+<div id="intro" class="infoBox">
+	<div class="links">
+		<a id="toInstructions" href="#">Instructions&hellip;</a>
+		<a class="start-game" href="#">Start Game!</a>
+	</div>
+</div>
+
+<div id="instructions" class="infoBox" style="display: none">
+	<div class="textBox">
+		<img src="_img/BorisBoidArtCharm.png" alt="Boris Boid, smoldering with charm." title="Boris Boid, smoldering with charm." style="width: 50%; height: auto; float: right">
+		
+		<h2>What on Earth&hellip;?</h2>
+		<p>You are Boris Boid. That's him over there. He's an <em>International Man of Ladies</em>.</p>
+		
+		<h2>What's the goal?</h2>
+		<p>As an <em>International Man of Ladies</em>, Boris is visiting the <strong>Flamingo night club</strong>&mdash;probably to pick up ladies. That's your goal:</p>
+		
+		<h2>Move Boris with the Mouse.</h2>
+		<p>That way he can go check out the ladies (and dudes).</p>
+		<h2 style="clear: both">Press <span class="keyboardKey">C</span> to <em>Charm</em> people. <span class="brightBlue">They'll turn bright blue when attracted.</span></h2>
+		
+		<h2>Bring attracted people to the dance floor!</h2>
+		<p>They'll party all night once you've brought them there&hellip;</p>
+		<p>Careful, though, if you <em>move too fast</em> or <em>get too far away</em>, <strong class="brightBlue">attracted</strong> people return to <strong>neutral</strong>. Boris can't win 'em all (at once&hellip;)</p>
+		<p>Also&mdash;these people aren't stupid. <strong class="brightRed">If you make them angry, they'll come after you.</strong></p>
+		<p>Angry people will <strong class="brightRed">hurt Boris</strong>, lowering <strong>the health bar above his head</strong>. The game is over when Boris gets knocked out!</p>
+		
+		<h2>Press X to <em>Repel</em> people.</h2>
+		<p>This lets Boris give an angry mob the slip!</p>
+		
+		<h2>You can also press Z to <em>make things interesting</em>&hellip;</h2>
+		<p>&hellip;Boris is going to be in for a world of hurt when you <strong>insult</strong> people nearby.</p>
+		
+		<h2>Watch out for these crazy characters in the Flamingo:</h2>
+		
+		<h2>Drama Queens<img src="_img/DramaQueenBig.png" width="60" height="56" alt="DramaQueenBig"></h2>
+		<p>If you attract a crowd <em>and</em> a <strong class="brightBlue">Drama Queen</strong>, the other attracted people will <strong>lose all interest</strong>.</p>
+		<p>If you try attracting <strong class="brightBlue">two Drama Queens at once</strong>, <strong class="brightRed">they'll kick your two-timing ass!</strong></p>
+		
+		<h2>Couples<img src="_img/CouplesBig.png" width="128" height="64" alt="CouplesBig"></h2>
+		<p>You can steal away <strong class="brightBlue">a member of a couple</strong>&hellip;<strong class="brightRed" style="">but their partner won't stand for it!</strong>
+		
+		<h2>The Peacemaker<img src="_img/PeacemakerBig.png" width="64" height="64" alt="PeacemakerBig"></h2>
+		<p>Need to mellow out some <strong class="brightRed">angry people</strong>? <strong class="brightBlue">Attract a Peacemaker</strong>&mdash;he'll neutralize all that anger and make things <strong>aaaaaaalllll riiiiiiigggghhhht</strong>.</strong>
+	</div>
+	<div class="links">
+		<a id="returnToIntro" href="#">Return</a>
+		<a class="start-game" href="#">Start Game!</a>
+	</div>
+</div>
+
+<canvas id="myCanvas" width="800" height="600">
+    Canvas Fallback Content
+</canvas>
+
+<!-- Libraries -->
+<script type = "text/javascript" src="_lib/jquery-1.6.4.min.js"></script>
+<script type = "text/javascript" src="_lib/jquery.hotkeys.js"></script>
+<script type = "text/javascript" src="_lib/sprite.js"></script>
+
+<!-- Core Classes -->
+<script type = "text/javascript" src="vector.js"></script>
+<script type = "text/javascript" src="player.js"></script>
+<script type = "text/javascript" src="corrals.js"></script>
+<script type = "text/javascript" src="corral.js"></script>
+<script type = "text/javascript" src="boids.js"></script>
+<script type = "text/javascript" src="boid.js"></script>
+<script type = "text/javascript" src="boidSubclasses.js"></script>
+
+<!-- Engine -->
+<script type = "text/javascript" src="engine.js"></script>
+
+<!-- Application -->
+<script type = "text/javascript" src="app.js"></script>
+
+<!-- Some Boxes! -->
+<a id="helpMe" href="#">Help Me!</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+Computer Games Technology
+Project 1 - Milestone 2
+
+Joe Kohlmann
+Tessa Verbruggen
+
+1)	How does your flocking system perform? Is the performance good enough for your game ideas?
+    
+	At 60 FPS with 30 boids it runs fine on the computers in the lab at CS. We're using a 640 x 480 canvas. This is probably about what we will use for the game.
+		
+2)	How does this performance change as the size of the flock (number of objects) <<changes>>?
+
+	It get's a bit laggy. With high numbers of boids some draw's seem to get skipped. 
+
+3)	At what point does your program break down as you increase the flock size (how many “boids” can you handle before the system feels too slow)?
+
+	200 boids hardly seems to give problems. At 300 you see a slight decrease in performance, but it would still be sufficient. At 400 it's definitely too slow.
+	
+4)	When things start to get slow, where is the bottleneck in your program? How did you figure that out? (We appreciate that we haven’t given you tools for doing this scientifically)
+
+	Cohesion and Alignment both require an O(n^2) loop. Performing these calculations for all boids with high numbers of boids takes too much time for the given framerate. If you turn down the framerate (FPS 30 at 400 boids) it gets a little less shaky but the average speed seems similar. As the speed is based on 'one step', technically they should move twice as fast.
+	Another huge bottleneck is the graphics part. At the moment, we draw an external image on the canvas (with a certain rotation) and wipe the screen each step. The combination of these operations make the program much slower.
+	To figure that out we tweaked the parameters for the amount of boids, graphics (rotation or no rotation, size of canvas, etc) and the FPS. We also looked at the code and figured out the high O() parts.
+
+5)	What might you do if you felt like you needed to get your system to perform with even larger flocks? (note: you may not need to do this. you can probably handle a big enough flock for your game needs – or it’s probably easier to change your game needs).
+
+	If we didn't have the O(n^2) loops it would be faster. We could achieve this by using a different datastructure (eg. a kd-tree) like we spoke about in class.
